@@ -1,0 +1,40 @@
+apply plugin: 'java'
+apply plugin: 'idea'
+apply plugin: 'war'
+
+sourceCompatibility = 1.7
+version = '1.0'
+
+repositories {
+    jcenter()
+    mavenCentral()
+}
+
+war {
+    baseName = 'status-report'
+    version =  '1.0'
+}
+
+configurations {
+    providedRuntime
+}
+
+dependencies {
+    compile project(':domain')
+    compile project(':dao')
+    compile project(':service')
+    compile ('org.springframework:spring-core:4.2.5.RELEASE')
+    compile ('org.springframework:spring-web:4.2.5.RELEASE')
+    compile ('org.springframework:spring-webmvc:4.2.5.RELEASE')
+    compile 'org.springframework:spring-jdbc:4.2.5.RELEASE'
+    compile 'org.hsqldb:hsqldb:2.3.3'
+    compile ('com.fasterxml.jackson.core:jackson-databind:2.5.4')
+    compile ('org.apache.logging.log4j:log4j-web:2.2')
+    compile ('javax.servlet:javax.servlet-api:3.0.1')
+    compile ('javax.servlet:jstl:1.2')
+    compile ('com.fasterxml.jackson.core:jackson-databind:2.4.3')
+    compile group: 'org.apache.logging.log4j', name: 'log4j-api', version: '2.2'
+    compile group: 'org.apache.logging.log4j', name: 'log4j-core', version: '2.2'
+
+    testCompile group: 'junit', name: 'junit', version: '4.11'
+}

@@ -1,0 +1,16 @@
+.ditignore
+**/.idea
+**/.gradle
+**/*.iml
+**/*.ipr
+**/*.iws
+**/*.*~
+**/*.jar
+**/*.class
+**/*.log
+**/build/
+**/classes
+**/out/
+**/target/
+
+
